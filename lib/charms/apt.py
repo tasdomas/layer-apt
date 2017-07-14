@@ -81,7 +81,7 @@ def queue_install(packages, options=None):
 
 def installed():
     '''Return the set of deb packages completed install'''
-    return set(state.split('.', 2)[2] for state in reactive.bus.get_states()
+    return set(state.split('.', 2)[2] for state in reactive.flags.get_states()
                if state.startswith('apt.installed.'))
 
 
